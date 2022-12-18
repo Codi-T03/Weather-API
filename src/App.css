@@ -1,12 +1,18 @@
+@font-face {
+  font-family:Raleway;
+  src: local('https://fonts.googleapis.com/css?family=Raleway&display=swap%27');
+}
 .app {
   height: 100vh;
-  width: 100vw;
+  width: auto;
   transition: background-color 1s ease-in;
+  /*display: flex;*/
+  
 }
 
 .app__header,
 .app__main {
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,6 +26,212 @@
 
 /* Current weather */
 
-div {
+/* div {
   border: 5px solid red;
+} */
+.app__header {
+  background-color: #759eda;
+}
+
+.app__main { 
+  background-color: #9ccef4;
+  height: 85%;
+}
+
+.btn {
+  background-color: #5879c7;
+  height: 55px;
+  border-radius: 3px;
+  margin-left: 100px;
+  width: 180px;
+  font-size: larger;
+  /* left: 683px; */
+  font-family: 'Raleway';
+  border: none;
+}
+
+.app__header {
+  flex-direction: row;
+height: 5%;
+}
+
+.weather__daily, .weather__now {
+  width: 100%;
+  height: 50%;
+}
+/* h1 {
+  margin-left: 10px;
+  color: beige;
+} */
+.img__now {
+  width: 200px;
+  height: 200px;
+  margin-left: 50px;
+}
+.weather__now {
+  
+    align-items: center;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.weather__daily {
+  display: flex;
+  justify-content: center;
+}
+.weather__daily img {
+  width: 150px;
+  height: 150px;
+}
+.weather__daily> div {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+}
+
+.weather__now p:first-of-type {
+  color: beige;
+  font-weight: bold;
+}
+span {
+  font-weight: bold;
+}
+
+input{
+  width: 200px;
+  height: 40px;
+  border: none;
+  background-color:#759eda;
+  color: beige;
+  font-size: large;
+  font-family: 'Raleway';
+
+}
+::placeholder {
+  color: beige;
+}
+input:focus{
+  outline: none;
+  font-size: large;
+}
+/* @media (max-device-width: 320px)  and (max-device-height: 830px){
+  .app {
+    height: 100vh;
+    width: auto;
+    transition: background-color 1s ease-in;
+    /*display: flex;*/
+    
+  /* }
+  .app__header,
+.app__main {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+} */ 
+@media(max-width:800px){
+  .app {
+    height: 100%;
+    width: auto;
+    /* transition: background-color 1s ease-in; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+.weather__daily {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  /* .app__header {
+    display: flex;
+    align-content: stretch;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: center;
+    align-items: baseline; */
+/* } */
+/* div {
+  border: 5px solid red;
+} */
+  .btn {
+    background-color: #5879c7;
+    height: 55px;
+    border-radius: 3px;
+    margin-left: 100px;
+    width: 180px;
+    font-size: larger;
+    /* left: 683px; */
+    font-family: 'Raleway';
+    border: none;
+  }
+
+  .app__header, .app__main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 21px;
+    font-family: "Raleway", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+.app__main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather__now {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-content: space-around;
+}
+.weather__daily div {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+}
+.weather__now p:first-of-type {
+  color: beige;
+  right: tl;
+  font-weight: bold;
+  font-size: 25px;
+  position: absolute;
+  right: 41px;
+  top: 142px;
+}
+span {
+  font-weight: bold;
+}
+.weather__daily p {
+font-size: large;
+font-weight: lighter;
+}
+.app__header span {
+
+}
+
 }
