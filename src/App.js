@@ -15,6 +15,7 @@ class App extends Component {
       name: "London"
     };
   }
+
   handleInputChange = value => {
     this.setState({ name: value });
   };
@@ -31,7 +32,7 @@ class App extends Component {
         <img src={cloudy} className="img__now" />
             <p>Overcast clouds</p>
             <p><span>Temprature</span> 10° to 11°C</p>
-            <p><span>Humidity</span> 78% <span>pressure</span> 1008.48</p>
+            <p><span>Humidity &nbsp; </span> 78% &nbsp; <span>pressure</span> &nbsp;1008.48</p>
         </div>
         <div className="weather__daily">
         <div>
@@ -42,7 +43,7 @@ class App extends Component {
               <div>
                     <p>06:00 </p>
                     <img src={cloudy}  />
-                    <p>9°C</p>
+                    <p> 9°C</p>
               </div>
               <div>
                     <p>09:00 </p>
@@ -50,12 +51,12 @@ class App extends Component {
                     <p>14°C</p>
               </div>
               <div>
-                    <p>12:00 </p>
+                    <p> 12:00 </p>
                     <img src={clear}  />
                     <p>17°C</p>
               </div>
               <div>
-                    <p>15:00 </p>
+                    <p> 15:00 </p>
                     <img src={clear} />
                     <p>18°C</p>
               </div>
