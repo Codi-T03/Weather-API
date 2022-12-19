@@ -2,6 +2,9 @@
   font-family:Raleway;
   src: local('https://fonts.googleapis.com/css?family=Raleway&display=swap%27');
 }
+*{
+  color: #010745;
+}
 .app {
   height: 100vh;
   width: auto;
@@ -9,6 +12,7 @@
   /*display: flex;*/
   
 }
+
 
 .app__header,
 .app__main {
@@ -64,9 +68,10 @@ height: 5%;
   color: beige;
 } */
 .img__now {
-  width: 200px;
-  height: 200px;
-  margin-left: 50px;
+  width: auto;
+  height: 356px;
+  margin-left: 57px;
+  margin-top: 61px;
 }
 .weather__now {
   
@@ -78,9 +83,12 @@ height: 5%;
 
 }
 .weather__daily {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    align-items: flex-end;
 }
+
 .weather__daily img {
   width: 150px;
   height: 150px;
@@ -119,6 +127,7 @@ input{
 input:focus{
   outline: none;
   font-size: large;
+  border-bottom: 1px solid #5879c7;
 }
 /* @media (max-device-width: 320px)  and (max-device-height: 830px){
   .app {
@@ -141,17 +150,24 @@ input:focus{
 }
 
 } */ 
+
+.weather__now p:nth-of-type(2){
+  font-size: xx-large;
+}
+
 @media(max-width:800px){
+
   .app {
+    
     height: 100%;
     width: auto;
-    /* transition: background-color 1s ease-in; */
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     align-content: center;
 }
+
 .weather__daily {
   display: flex;
   flex-direction: column;
@@ -201,12 +217,14 @@ input:focus{
 }
 
 .weather__now {
-  align-items: flex-end;
+  align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-content: space-around;
+  margin-bottom: 83px;
+  margin-top: -29px;
 }
 .weather__daily div {
   width: 100%;
@@ -219,9 +237,7 @@ input:focus{
   right: tl;
   font-weight: bold;
   font-size: 25px;
-  position: absolute;
-  right: 41px;
-  top: 142px;
+
 }
 span {
   font-weight: bold;
