@@ -1,5 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { render } from "react-dom";
+import { Component } from "react";
+import "../App.js";
 import storm from "../img/weather-icons/storm.svg";
 import clear from "../img/weather-icons/clear.svg";
 import cloudy from "../img/weather-icons/cloudy.svg";
@@ -11,12 +13,11 @@ import rain from "../img/weather-icons/rain.svg";
 import snow from "../img/weather-icons/snow.svg";
 import unknown from "../img/weather-icons/unknown.svg";
 
-export default class WeatherItem extends Component {
+export default class CurrentWeather extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
-    const getTime = (e) => {
-      let date = e.split(" ");
-      return date[1].slice(0, 5);
-    };
     let imgSrc = (img) => {
       switch (img) {
         case "clear":
@@ -51,13 +52,41 @@ export default class WeatherItem extends Component {
           alignItems: "center",
         }}
       >
-        <p>{getTime(this.props.time)}</p>
         <img
           src={imgSrc(this.props.img)}
           alt={this.props.img}
-          style={{ width: "6vw", height: "auto" }}
+          style={{ width: "300px", height: "auto" }}
         />
-        <p>{Math.round(this.props.meanTemperature - 273.15)}&#176;C</p>
+        <h2 style={{ color: "white" }}>overcast {this.props.img}</h2>
+        <div
+          className="temp"
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <h2>Temperature </h2>
+          <span style={{ fontSize: "1.5em", padding: "20px" }}>
+            {Math.round(this.props.temp_min - 273.15)}&#176; to{" "}
+            {Math.round(this.props.temp_max - 273.15)}&#176;C
+          </span>
+        </div>
+        <div
+          className="temp"
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <h3>Humidity </h3>
+          <span style={{ fontSize: "1em", padding: "20px" }}>
+            {this.props.humidity}%
+          </span>
+          <h3>Pressure </h3>
+          <span style={{ fontSize: "1em", padding: "20px" }}>
+            {this.props.pressure}
+          </span>
+        </div>
       </div>
     );
   }
