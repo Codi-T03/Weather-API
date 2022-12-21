@@ -16,29 +16,25 @@ export default class CurrentWeather extends Component {
     this.imgSrc = this.imgSrc.bind(this);
   }
 
-  imgSrc(img) {
-    switch (img) {
-      case "clear":
-        return clear;
-      case "clouds":
-        return cloudy;
-      case "drizzle":
-        return drizzle;
-      case "fog":
-        return fog;
-      case "storm":
-        return storm;
-      case "mostlycloudy":
-        return mostlycloudy;
-      case "partlycloudy":
-        return partlycloudy;
-      case "rain":
-        return rain;
-      case "snow":
-        return snow;
-      case "unknown":
-        return unknown;
-        break;
+  imgSrc(id) {
+    if (id < 300) {
+      return storm;
+    } else if (id >= 300 && id <= 499) {
+      return drizzle;
+    } else if (id >= 500 && id <= 599) {
+      return rain;
+    } else if (id >= 600 && id <= 699) {
+      return snow;
+    } else if (id >= 700 && id <= 799) {
+      return fog;
+    } else if (id == 800) {
+      return clear;
+    } else if (id == 801) {
+      return partlycloudy;
+    } else if (id > 801 && id <= 805) {
+      return mostlycloudy;
+    } else {
+      return unknown;
     }
   }
 
@@ -53,9 +49,7 @@ export default class CurrentWeather extends Component {
         }}
       >
         <img
-          src={this.imgSrc(
-            this.props.data.list[0].weather[0].main.toLowerCase()
-          )}
+          src={this.imgSrc(this.props.data.list[0].weather[0].id)}
           alt={this.props.data.list[0].weather[0].main.toLowerCase()}
           style={{ width: "300px", height: "auto" }}
         />

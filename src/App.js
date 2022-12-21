@@ -72,7 +72,7 @@ class App extends Component {
                       <WeatherItem
                         loaded={this.state.loaded}
                         meanTemperature={e.main.temp}
-                        img={e.weather[0].main.toLocaleLowerCase()}
+                        img={e.weather[0].id}
                         time={e.dt_txt}
                       />
                     );
