@@ -67,8 +67,8 @@ export default class CurrentWeather extends Component {
         >
           <h2>Temperature </h2>
           <span style={{ fontSize: "1.5em", padding: "20px" }}>
-            {Math.round(this.props.temp_min - 273.15)}&#176; to{" "}
-            {Math.round(this.props.temp_max - 273.15)}&#176;C
+            {Math.round(this.props.temp_min)}&#176; to{" "}
+            {Math.round(this.props.temp_max)}&#176;C
           </span>
         </div>
         <div
